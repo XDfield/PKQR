@@ -5,11 +5,11 @@
 	</head>
 	<body>
 		<form id="test">
-			<fieldset>
+			<fieldset id="Main" style="">
 				<legend>基本信息</legend>
 				<div>
 					<label for="Species">精灵:&nbsp;</label>
-					<select name="Species" id="Species" class="half-long">
+					<select name="Species" id="Species" class="long-value">
 						<option>皮卡丘</option>
 						<option>小火龙</option>
 						<option>杰尼龟</option>
@@ -18,7 +18,7 @@
 				</div>
 				<div>
 					<label for="Gender">性别:&nbsp;</label>
-					<select name="Gender" id="Gender">
+					<select name="Gender" id="Gender" class="short-value">
 						<option>♂</option>
 						<option>♀</option>
 					</select>
@@ -32,9 +32,9 @@
 				</div>
 				<div>
 					<label for="Level">等级:&nbsp;</label>
-					<input type="number" name="Level" id="Level" value="1" min="1" max="100">
+					<input type="number" name="Level" id="Level" value="1" min="1" max="100" class="short-value">
 					<label for="EXP">经验: &nbsp;</label>
-					<input type="number" name="EXP" id="EXP" value="0">
+					<input type="number" name="EXP" id="EXP" value="0" class="short-value">
 				</div>
 				<div>
 					<label for="Nickname">昵称:&nbsp;</label>
@@ -43,30 +43,30 @@
 				</div>
 				<div>
 					<label for="Nature">性格:&nbsp;</label>
-					<select name="Nature" id="Nature">
+					<select name="Nature" id="Nature" class="long-value">
 						<option>勤奋</option>
 						<option>胆小</option>
 					</select>
 				</div>
 				<div>
 					<label for="HeldItem">持有物:&nbsp;</label>
-					<select name="HeldItem" id="HeldItem">
+					<select name="HeldItem" id="HeldItem" class="long-value">
 						<option>(无)</option>
 					</select>
 				</div>
 				<div>
 					<label for="Friendship">亲密度:&nbsp;</label>
-					<input type="number" value="0" min="0" max="255" name="Friendship" id="Friendship">
+					<input type="number" value="0" min="0" max="255" name="Friendship" id="Friendship" class="short-value">
 				</div>
 				<div>
 					<label for="Ability">特性:&nbsp;</label>
-					<select name="Ability" id="Ability">
+					<select name="Ability" id="Ability" class="long-value">
 						<option>test</option>
 					</select>
 				</div>
 				<div>
 					<label for="Language">语言:&nbsp;</label>
-					<select name="Language" id="Language">
+					<select name="Language" id="Language" class="long-value">
 						<option>CHS (简体中文)</option>
 					</select>
 				</div>
@@ -80,24 +80,24 @@
 				</div>
 				<div>
 					<label for="Country">国家:&nbsp;</label>
-					<select name="Country" id="Country">
+					<select name="Country" id="Country" class="long-value">
 						<option>阿尔巴尼亚</option>
 					</select>
 				</div>
 				<div>
 					<label for="subRegion">地区:&nbsp;</label>
-					<select name="subRegion" id="subRegion">
+					<select name="subRegion" id="subRegion" class="long-value">
 						<option>--------</option>
 					</select>
 				</div>
 				<div>
 					<label for="3dsRegion">3DS区域:&nbsp;</label>
-					<select name="3dsRegion" id="3dsRegion">
+					<select name="3dsRegion" id="3dsRegion" class="long-value">
 						<option>Japan (日本)</option>
 					</select>
 				</div>
 			</fieldset>
-			<fieldset>
+			<fieldset id="Met" style="">
 				<legend>相遇信息</legend>
 				<div>
 					<label for="originGame">来源版本:&nbsp;</label>
@@ -118,8 +118,238 @@
 					</select>
 				</div>
 				<div>
-					<label></label>
+					<input type="checkbox" name="asEgg" id="asEgg">
+					<label for="asEgg">蛋</label>
 				</div>
+				<fieldset id="EggMet">
+					<legend>蛋获得相关</legend>
+					<div>
+						<label for="eggMetLocation">取得场所:</label>
+						<select name="eggMetLocation" id="eggMetLocation">
+							<option>--------</option>
+						</select>
+					</div>
+					<div>
+						<label for="eggDate">孵化日期:</label>
+						<input type="date" name="eggDate" id="eggDate">
+					</div>
+				</fieldset>
+			</fieldset>
+			<fieldset id="Stats" style="">
+				<legend>数值</legend>
+				<table>
+					<tr>
+						<th></th>
+						<th>个体</th>
+						<th>努力</th>
+						<th>能力</th>
+					</tr>
+					<tr>
+						<td>HP:</td>
+						<td><input type="number" name="IV_HP" id="IV_HP" class="short-value"></td>
+						<td><input type="number" name="EV_HP" id="EV_HP" class="short-value"></td>
+						<td><input type="number" name="HPs" id="HPs" readonly="readonly" class="short-value"></td>
+					</tr>
+					<tr>
+						<td>攻击:</td>
+						<td><input type="number" name="IV_ATK" id="IV_ATK" class="short-value"></td>
+						<td><input type="number" name="EV_ATK" id="EV_ATK" class="short-value"></td>
+						<td><input type="number" name="ATKs" id="ATKs" readonly="readonly" class="short-value"></td>
+					</tr>
+					<tr>
+						<td>防御:</td>
+						<td><input type="number" name="IV_DEF" id="IV_DEF" class="short-value"></td>
+						<td><input type="number" name="EV_DEF" id="EV_DEF" class="short-value"></td>
+						<td><input type="number" name="DEFs" id="DEFs" readonly="readonly" class="short-value"></td>
+					</tr>
+					<tr>
+						<td>特攻:</td>
+						<td><input type="number" name="IV_SPA" id="IV_SPA" class="short-value"></td>
+						<td><input type="number" name="EV_SPA" id="EV_SPA" class="short-value" class="short-value"></td>
+						<td><input type="number" name="SPAs" id="SPAs" readonly="readonly" class="short-value"></td>
+					</tr>
+					<tr>
+						<td>特防:</td>
+						<td><input type="number" name="IV_SPD" id="IV_SPD" class="short-value"></td>
+						<td><input type="number" name="EV_SPD" id="EV_SPD" class="short-value"></td>
+						<td><input type="number" name="SPDs" id="SPDs" readonly="readonly" class="short-value"></td>
+					</tr>
+					<tr>
+						<td>速度:</td>
+						<td><input type="number" name="IV_SPE" id="IV_SPE" class="short-value"></td>
+						<td><input type="number" name="EV_SPE" id="EV_SPE" class="short-value"></td>
+						<td><input type="number" name="SPEs" id="SPEs" readonly="readonly"  class="short-value"></td>
+					</tr>
+					<tr>
+						<td>总计:</td>
+						<td><input type="number" name="IVs" id="IVs" readonly="readonly" class="short-value"></td>
+						<td><input type="number" name="EVs" id="EVs" readonly="readonly" class="short-value"></td>
+						<td><input type="text" name="HiddenPower" id="HiddenPower" readonly="readonly" class="short-value"></td>
+					</tr>
+				</table>
+				<fieldset id="ContestStats">
+					<legend>华丽大赛</legend>
+					<table>
+						<tr>
+							<td>帅气</td>
+							<td>美丽</td>
+							<td>可爱</td>
+							<td>聪明</td>
+							<td>强壮</td>
+							<td>光泽</td>
+						</tr>
+						<tr>
+							<td><input type="number" name="Cool" id="Cool" class="short-value"></td>
+							<td><input type="number" name="Beauty" id="Beauty" class="short-value"></td>
+							<td><input type="number" name="Cute" id="Cute" class="short-value"></td>
+							<td><input type="number" name="Clever" id="Clever" class="short-value"></td>
+							<td><input type="number" name="Tough" id="Tough" class="short-value"></td>
+							<td><input type="number" name="Sheen" id="Sheen" class="short-value"></td>
+						</tr>
+					</table>
+				</fieldset>
+			</fieldset>
+			<fieldset id="Attacks" style="">
+				<legend>招式</legend>
+				<fieldset id="CurrentMoves">
+					<legend>当前技能</legend>
+					<table>
+						<tr>
+							<th></th>
+							<th>PP</th>
+							<th>PP提升</th>
+						</tr>
+						<tr>
+							<td><select name="Move1" id="Move1">
+								<option>(无)</option>
+							</select></td>
+							<td><input type="number" name="Move1_PP" id="Move1_PP" class="short-value"></td>
+							<td><select name="Move1_PPUps" id="Move1_PPUps" class="short-value">
+								<option>0</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td><select name="Move2" id="Move2">
+								<option>(无)</option>
+							</select></td>
+							<td><input type="number" name="Move2_PP" id="Move2_PP" class="short-value"></td>
+							<td><select name="Move2_PPUps" id="Move2_PPUps" class="short-value">
+								<option>0</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td><select name="Move3" id="Move3">
+								<option>(无)</option>
+							</select></td>
+							<td><input type="number" name="Move3_PP" id="Move3_PP" class="short-value"></td>
+							<td><select name="Move3_PPUps" id="Move3_PPUps" class="short-value">
+								<option>0</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td><select name="Move4" id="Move4">
+								<option>(无)</option>
+							</select></td>
+							<td><input type="number" name="Move4_PP" id="Move4_PP" class="short-value"></td>
+							<td><select name="Move4_PPUps" id="Move4_PPUps" class="short-value">
+								<option>0</option>
+							</select></td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset id="RelearnMoves">
+					<legend>遗传技能</legend>
+					<table>
+						<tr>
+							<td>
+								<select name="RelearnMove1" id="RelearnMove1">
+									<option>(无)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select name="RelearnMove2" id="RelearnMove2">
+									<option>(无)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select name="RelearnMove3" id="RelearnMove3">
+									<option>(无)</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select name="RelearnMove4" id="RelearnMove4">
+									<option>(无)</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</fieldset>
+			<fieldset id="OT/Misc" style="">
+				<legend>初训家/杂项</legend>
+				<fieldset id="OT">
+					<legend>初训家信息</legend>
+					<table>
+						<tr>
+							<td>表ID</td>
+							<td colspan="2"><input type="number" name="TID" id="TID"></td>
+						</tr>
+						<tr>
+							<td>里ID</td>
+							<td colspan="2"><input type="number" name="SID" id="SID"></td>
+						</tr>
+						<tr>
+							<td>名字</td>
+							<td><input type="text" name="OT" id="OT"></td>
+							<td><select name="OT_gender" id="OT_gender">
+									<option>♂</option>
+									<option>♀</option>
+								</select></td>
+						</tr>
+					</table>
+				</fieldset>
+				<fieldset id="LastestHandler">
+					<legend>最近持有人(非初训家)</legend>
+					<label for="OT_Handler">名字:</label>
+					<input type="text" name="OT_Handler" id="OT_Handler">
+				</fieldset>
+				<fieldset id="ExtraBytes">
+					<legend>额外字节</legend>
+					<select name="ExtraBytes" id="ExtraBytes">
+						<option>0x2A</option>
+					</select>
+					<input type="number" name="ExtraBytes2" id="ExtraBytes2" class="short-value">
+				</fieldset>
+				<fieldset id="Marking">
+					<legend>标记</legend>
+					<table>
+						<tr>
+							<td>●</td>
+							<td>▲</td>
+							<td>■</td>
+							<td>♥</td>
+							<td>★</td>
+							<td>♦</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="MarkCircle" id="MarkCircle"></td>
+							<td><input type="checkbox" name="MarkTriangle" id="MarkTriangle"></td>
+							<td><input type="checkbox" name="MarkSquare" id="MarkSquare"></td>
+							<td><input type="checkbox" name="MarkHeart" id="MarkHeart"></td>
+							<td><input type="checkbox" name="MarkStar" id="MarkStar"></td>
+							<td><input type="checkbox" name="MarkDiamond" id="MarkDiamond"></td>
+						</tr>
+					</table>
+				</fieldset>
+				<label for="Encryption">加密常数:</label>
+				<button>随机</button>
+				<input type="number" name="Encryption" id="Encryption">
 			</fieldset>
 		</form>
 	</body>
